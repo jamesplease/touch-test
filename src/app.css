@@ -1,2 +1,51 @@
 .app {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  background: #eee;
+  padding: 20px;
+  user-select: none;
+  touch-action: none;
+}
+
+.btn:active {
+  background: rgb(23, 132, 255);
+}
+
+.pointer-visualization {
+  pointer-events: none;
+
+  --half-height: calc(-1 * var(--height) / 2);
+  --half-width: calc(-1 * var(--width) / 2);
+
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  height: var(--height);
+  width: var(--width);
+  transform: translate(var(--half-width), var(--half-height));
+
+  background: rgb(107, 107, 255);
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+}
+
+.pointer-visualization-tapped {
+  background: red;
+}
+
+.pointer-visualization-center {
+  pointer-events: none;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: white;
 }
