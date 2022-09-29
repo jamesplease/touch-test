@@ -40,7 +40,6 @@
 
   /* width: 50px;
   height: 50px; */
-  background: black;
 }
 
 .pointer-visualization-modded {
@@ -55,7 +54,6 @@
 .pointer-visualization-modded.pointer-visualization-tapped {
   background: transparent;
   border: 3px solid blue;
-  /* background: rgb(23, 132, 255); */
 }
 
 .pointer-visualization-center {
