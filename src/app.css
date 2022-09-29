@@ -19,6 +19,7 @@
 }
 
 .pointer-visualization {
+  z-index: 5;
   pointer-events: none;
 
   --half-height: calc(-1 * var(--height) / 2);
@@ -36,6 +37,10 @@
 
   display: grid;
   place-items: center;
+
+  /* width: 50px;
+  height: 50px; */
+  background: black;
 }
 
 .pointer-visualization-modded {
