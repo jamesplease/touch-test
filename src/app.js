@@ -38,8 +38,8 @@ export default function App() {
         console.log('e', e);
         setTapped(false);
 
-        let touchHeight = e.height;
-        let touchWidth = e.width;
+        let touchHeight = e.height ?? 0;
+        let touchWidth = e.width ?? 0;
 
         let visualizationModified = false;
         if (touchHeight === 0 || touchHeight === 1) {
