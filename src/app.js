@@ -38,8 +38,20 @@ export default function App() {
         console.log('e', e);
         setTapped(false);
 
-        const touchHeight = e.height;
-        const touchWidth = e.width;
+        let touchHeight = e.height;
+        let touchWidth = e.width;
+
+        let visualizationModified = false;
+        if (touchHeight === 0 || touchHeight === 1) {
+          touchHeight = 6;
+          visualizationModified = true;
+        }
+
+        if (touchWidth === 0 || touchWidth === 1) {
+          touchWidth = 6;
+          visualizationModified = true;
+        }
+
         const halfHeight = touchHeight / 2;
         const halfWidth = touchWidth / 2;
 
@@ -48,6 +60,7 @@ export default function App() {
           height: e.width,
           x: e.clientX,
           y: e.clientY,
+          visualizationModified,
         });
       }}>
       <div>
@@ -63,6 +76,8 @@ export default function App() {
           <div
             className={classNames('pointer-visualization', {
               'pointer-visualization-tapped': tapped,
+              'pointer-visualization-modded':
+                lastPointerEvent.visualizationModified,
             })}
             style={{
               '--width': `${lastPointerEvent.width}px`,
